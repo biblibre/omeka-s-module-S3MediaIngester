@@ -1,0 +1,47 @@
+<?php $this->headScript()->appendFile($this->assetUrl('js/s3-media-ingester.js', 'S3MediaIngester')); ?>
+<?php $this->headLink()->appendStylesheet($this->assetUrl('css/s3-media-ingester.css', 'S3MediaIngester')); ?>
+
+<div class="field required">
+    <div class="field-meta">
+        <label for="media-s3-ingest-filename-__index__"><?= $this->translate('Path') ?></label>
+        <a href="#" class="expand" aria-label="<?= $this->escapeHtml($this->translate('Expand')) ?>"></a>
+        <div class="collapsible">
+            <div class="field-description"><?= $this->escapeHtml($this->translate('File path on S3 bucket')) ?></div>
+        </div>
+    </div>
+    <div class="inputs">
+        <input type="text" name="o:media[__index__][ingest_filename]" id="media-s3-ingest-filename-__index__" class="s3mediaingester-ingest-filename" required>
+        <button type="button" class="s3mediaingester-button-browse" data-input-id="media-s3-ingest-filename-__index__" data-sidebar-url="<?= $this->url('admin/s3-media-ingester', ['controller' => 'file-selector'], ['query' => ['source' => $source]]) ?>"><?= $this->escapeHtml($this->translate('Browse')) ?></button>
+    </div>
+</div>
+
+<?php
+$ingest_directory_recursively = new Laminas\Form\Element\Checkbox('o:media[__index__][ingest_directory_recursively]');
+$ingest_directory_recursively->setOptions([
+    'label' => 'Ingest directory recursively', // @translate
+]);
+$ingest_directory_recursively->setAttributes([
+    'id' => 'media-s3-ingest-directory-recursively-__index__',
+    'required' => false,
+]);
+echo $this->formRow($ingest_directory_recursively);
+
+$original_file_action = new Laminas\Form\Element\Radio('o:media[__index__][original_file_action]');
+$original_file_action->setOptions([
+    'label' => 'Action on original file', // @translate
+    'info' => 'What to do with the original file after it has been successfully imported', // @translate
+]);
+$original_file_action->setAttributes([
+    'id' => 'media-s3-original-file-action-__index__',
+    'required' => true,
+]);
+$original_file_action->setValueOptions([
+    'default' => sprintf(
+        'Default (%s)', // @translate
+        $this->setting('s3mediaingester_original_file_action', 'keep')
+    ),
+    'keep' => 'Keep', // @translate
+    'delete' => 'Delete', // @translate
+]);
+$original_file_action->setValue('default');
+echo $this->formRow($original_file_action);

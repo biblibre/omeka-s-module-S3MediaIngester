@@ -1,0 +1,18 @@
+#s3mediaingester-file-selector label {
+    padding: 2px;
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+#s3mediaingester-file-selector label:hover {
+    box-shadow: 0px 0px 0px 2px #dfdfdf inset;
+}
+#s3mediaingester-file-selector label::after {
+    content: none;
+}
+#s3mediaingester-file-selector label:has(input:checked) {
+    background-color: #dfdfdf;
+}
+#s3mediaingester-file-selector label input[type="radio"] {
+    display: none;
+}

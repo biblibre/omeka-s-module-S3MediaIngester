@@ -1,0 +1,52 @@
+<?php
+/**
+ * @var string $source
+ * @var ?string $prefix
+ * @var ?string $parentPrefix
+ * @var string[] $directories
+ * @var string[] $files
+ */
+?>
+<h3>Files</h3>
+
+<?php $prefixParts = array_filter(explode('/', trim($prefix, '/'))) ?>
+<?php $breadcrumbs = [['prefix' => '', 'name' => $this->translate('(root)')]]; ?>
+<?php foreach ($prefixParts as $prefixPart): ?>
+    <?php $localPrefix .= $prefixPart; ?>
+    <?php $breadcrumbs[] = ['prefix' => "$localPrefix/", 'name' => $prefixPart] ?>
+<?php endforeach; ?>
+<?php $lastBreadcrumb = array_pop($breadcrumbs); ?>
+<?php foreach ($breadcrumbs as $breadcrumb): ?>
+    <?= $this->hyperlink($breadcrumb['name'], $this->url('admin/s3-media-ingester', ['controller' => 'file-selector'], ['query' => ['source' => $source, 'prefix' => $breadcrumb['prefix']]])) ?>
+    /
+<?php endforeach; ?>
+<?= $this->escapeHtml($lastBreadcrumb['name']) ?>
+
+<?php if (isset($parentPrefix)): ?>
+    <label>
+        <input type="radio" name="selected" value="<?= $this->escapeHtml($prefix) ?>" checked>
+        <i class="fas fa-fw fa-folder-open"></i>
+        <?= $this->escapeHtml($this->translate(sprintf('%s (whole directory)', rtrim($prefix, '/')))) ?>
+    </label>
+<?php endif ?>
+
+<?php foreach ($directories as $directory): ?>
+    <label>
+        <input type="radio" name="selected" value="<?= $this->escapeHtml($directory) ?>">
+        <i class="far fa-fw fa-folder"></i>
+        <?= $this->hyperlink(substr_replace($directory, '', 0, strlen($prefix)), $this->url('admin/s3-media-ingester', ['controller' => 'file-selector'], ['query' => ['source' => $source, 'prefix' => $directory]])) ?>
+    </label>
+<?php endforeach; ?>
+
+<?php foreach ($files as $file): ?>
+        <label>
+            <input type="radio" name="selected" value="<?= $this->escapeHtml($file) ?>">
+            <i class="far fa-fw fa-file"></i>
+            <?= $this->escapeHtml(substr_replace($file, '', 0, strlen($prefix))) ?>
+            <?= ''/*$this->hyperlink($file, '#', ['data-filepath' => $file])*/ ?>
+        </label>
+<?php endforeach; ?>
+
+<div class="confirm-panel">
+    <a href="#" class="button s3mediaingester-button-confirm"><?= $this->translate('Confirm') ?></a>
+</div>

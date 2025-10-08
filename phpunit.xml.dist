@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="test/bootstrap.php" colors="true" backupGlobals="false">
+    <testsuites>
+        <testsuite name="S3MediaIngester">
+            <directory>test/S3MediaIngester</directory>
+        </testsuite>
+    </testsuites>
+    <coverage>
+        <include>
+            <file>Module.php</file>
+            <directory suffix=".php">src</directory>
+        </include>
+        <report>
+            <text outputFile="php://stdout" showOnlySummary="true"/>
+        </report>
+    </coverage>
+</phpunit>

@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-10 16:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: view/s3-media-ingester/admin/file-selector/browse.phtml:13
+msgid "(root)"
+msgstr ""
+
+#: view/s3-media-ingester/common/media-ingester-form.phtml:6
+msgid "Path"
+msgstr ""
+
+#: view/s3-media-ingester/common/media-ingester-form.phtml:9
+msgid "File path on S3 bucket"
+msgstr ""
+
+#: view/s3-media-ingester/common/media-ingester-form.phtml:21
+msgid "Ingest directory recursively"
+msgstr ""
+
+#: view/s3-media-ingester/common/media-ingester-form.phtml:31
+msgid "Action on original file"
+msgstr ""
+
+#: view/s3-media-ingester/common/media-ingester-form.phtml:32
+#: src/Form/ConfigForm.php:15
+msgid ""
+"What to do with the original file after it has been successfully imported"
+msgstr ""
+
+#: view/s3-media-ingester/common/media-ingester-form.phtml:40
+#, php-format
+msgid "Default (%s)"
+msgstr ""
+
+#: view/s3-media-ingester/common/media-ingester-form.phtml:43
+#: src/Form/ConfigForm.php:22
+msgid "Keep"
+msgstr ""
+
+#: Module.php:92
+msgid "No ingest filename specified."
+msgstr ""
+
+#: Module.php:108
+#, php-format
+msgid "Ingest directory \"%s\" is empty."
+msgstr ""
+
+#: src/Form/ConfigForm.php:14
+msgid "Default action on original file"
+msgstr ""
+
+#: src/Media/Ingester/S3.php:70
+msgid "No ingest filename specified"
+msgstr ""
+
+#: src/Media/Ingester/S3.php:81
+#, php-format
+msgid "Cannot load file \"%s\". %s"
+msgstr ""
