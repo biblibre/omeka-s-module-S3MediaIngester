@@ -45,9 +45,9 @@ You can use this ingester in PHP code like this
 
 ```php
 $itemData['o:media'][] = [
-    'o:ingester' => 's3',
-    'bucket' => 'default',
-    'ingest_filename' => '/path/to/file.png',
+    // The ingester name is "s3-" followed by the name of the source configured earlier.
+    'o:ingester' => 's3-my-s3-source',
+    'ingest_filename' => 'path/to/file.png',
     'original_file_action' => 'keep', // or 'delete'
 ];
 $api->create('items', $itemData);
