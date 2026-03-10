@@ -10,8 +10,14 @@
         itemMediaFieldset.insertAdjacentHTML(
             'beforeend',
             `<div id="s3mediaingester-file-selector" class="sidebar">
-                <a href="#" class="sidebar-close o-icon-close"><span class="screen-reader-text">${Omeka.jsTranslate('Close')}</span></a>
-                <div class="sidebar-content">
+                <div class="confirm-main">
+                    <a href="#" class="sidebar-close o-icon-close"><span class="screen-reader-text">${Omeka.jsTranslate('Close')}</span></a>
+                    <div class="sidebar-content">
+                    </div>
+                </div>
+
+                <div class="confirm-panel">
+                    <a href="#" class="button s3mediaingester-button-confirm">${Omeka.jsTranslate('Confirm')}</a>
                 </div>
             </div>`
         );

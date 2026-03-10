@@ -13,6 +13,10 @@ return [
             'S3MediaIngester\Form\ConfigForm' => Form\ConfigForm::class,
         ],
     ],
+    'js_translate_strings' => [
+        'Confirm', // @translate
+        'Close', // @translate
+    ],
     'router' => [
         'routes' => [
             'admin' => [
