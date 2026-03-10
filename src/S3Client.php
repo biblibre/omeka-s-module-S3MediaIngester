@@ -54,7 +54,10 @@ class S3Client
 
         $uri = new Uri\Http($this->getConfig('endpoint'));
         $uri->setHost(sprintf('%s.%s', $this->getConfig('bucket'), $uri->getHost()));
-        $uri->setPath('/' . ltrim($key, '/'));
+
+        $encodedKey = implode('/', array_map('rawurlencode', explode('/', ltrim($key, '/'))));
+        $uri->setPath('/' . $encodedKey);
+
         $request->setUri($uri);
         $this->signRequest($request);
 
@@ -68,7 +71,10 @@ class S3Client
 
         $uri = new Uri\Http($this->getConfig('endpoint'));
         $uri->setHost(sprintf('%s.%s', $this->getConfig('bucket'), $uri->getHost()));
-        $uri->setPath('/' . ltrim($key, '/'));
+
+        $encodedKey = implode('/', array_map('rawurlencode', explode('/', ltrim($key, '/'))));
+        $uri->setPath('/' . $encodedKey);
+
         $request->setUri($uri);
         $this->signRequest($request);
 
