@@ -20,3 +20,8 @@ trigger:
     - 'master'
   event:
     - 'push'
+---
+kind: signature
+hmac: 11505007fadcc61923dc755d4c71b1a87ef7c3cfa11ae0ce6f1f3e91236752c3
+
+...
