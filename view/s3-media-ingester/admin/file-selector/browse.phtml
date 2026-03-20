@@ -11,6 +11,7 @@
 
 <?php $prefixParts = array_filter(explode('/', trim($prefix, '/'))) ?>
 <?php $breadcrumbs = [['prefix' => '', 'name' => $this->translate('(root)')]]; ?>
+<?php $localPrefix = ''; ?>
 <?php foreach ($prefixParts as $prefixPart): ?>
     <?php $localPrefix .= $prefixPart; ?>
     <?php $breadcrumbs[] = ['prefix' => "$localPrefix/", 'name' => $prefixPart] ?>
