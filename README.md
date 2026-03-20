@@ -2,6 +2,9 @@
 
 Adds a media ingester for files stored on Amazon S3 compatible object storage.
 
+The complete documentation of S3 Media Ingester can be found at
+<https://biblibre.github.io/omeka-s-module-S3MediaIngester/>
+
 ## Installation
 
 See general end user documentation for [Installing a module](http://omeka.org/s/docs/user-manual/modules/#installing-modules)
