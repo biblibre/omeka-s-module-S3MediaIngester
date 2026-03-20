@@ -55,8 +55,7 @@ class S3Client
         $uri = new Uri\Http($this->getConfig('endpoint'));
         $uri->setHost(sprintf('%s.%s', $this->getConfig('bucket'), $uri->getHost()));
 
-        $encodedKey = implode('/', array_map('rawurlencode', explode('/', ltrim($key, '/'))));
-        $uri->setPath('/' . $encodedKey);
+        $uri->setPath($this->getPath($key));
 
         $request->setUri($uri);
         $this->signRequest($request);
@@ -72,8 +71,7 @@ class S3Client
         $uri = new Uri\Http($this->getConfig('endpoint'));
         $uri->setHost(sprintf('%s.%s', $this->getConfig('bucket'), $uri->getHost()));
 
-        $encodedKey = implode('/', array_map('rawurlencode', explode('/', ltrim($key, '/'))));
-        $uri->setPath('/' . $encodedKey);
+        $uri->setPath($this->getPath($key));
 
         $request->setUri($uri);
         $this->signRequest($request);
@@ -157,6 +155,14 @@ class S3Client
         }
 
         return new DateTimeImmutable('now', new DateTimeZone('UTC'));
+    }
+
+    /**
+     * Returns the path corresponding to an object key, properly URL-encoded.
+     */
+    protected function getPath(string $key): string
+    {
+        return '/' . implode('/', array_map('rawurlencode', explode('/', ltrim($key, '/'))));
     }
 
     protected function getConfig(string $key)
