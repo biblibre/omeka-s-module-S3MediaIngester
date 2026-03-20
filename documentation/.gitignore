@@ -1,0 +1,5 @@
+/.venv
+/_build
+/locales/*/LC_MESSAGES/*.mo
+/screenshots-maker/cypress/screenshots
+/screenshots-maker/node_modules

@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, BibLibre
+# This file is distributed under the same license as the S3 Media Ingester
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: S3 Media Ingester\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-20 10:28+0100\n"
+"PO-Revision-Date: 2026-03-20 10:36+0100\n"
+"Last-Translator: Julian Maurice <julian.maurice@biblibre.com>\n"
+"Language-Team: fr <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Generated-By: Babel 2.18.0\n"
+"X-Generator: Poedit 3.6\n"
+
+#: ../../configuration.rst:2
+msgid "Configuration"
+msgstr "Configuration"
+
+#: ../../configuration.rst:5
+msgid "S3 sources configuration"
+msgstr "Configuration des sources S3"
+
+#: ../../configuration.rst:7
+msgid "In Omeka's ``config/local.config.php``, add a section like this::"
+msgstr ""
+"Dans le fichier ``config/local.config.php`` d'Omeka, ajoutez une section "
+"comme ceci::"
+
+#: ../../configuration.rst:26
+msgid "Module configuration"
+msgstr "Configuration du module"
+
+#: ../../configuration.rst:28
+msgid ""
+"In the module global settings (Admin > Modules > S3MediaIngester's "
+"\"Configure\" button) you can choose the default action on original "
+"files (keep or delete)."
+msgstr ""
+"Dans les paramètres du module (Admin > Modules > bouton \"Configurer\" "
+"de S3MediaIngester) vous pouvez choisir l'action par défaut sur les "
+"fichiers originaux (garder ou supprimer)."
+
+#: ../../configuration.rst:34
+msgid "This default action can be overriden when importing new media."
+msgstr ""
+"Cette action par défaut peut être modifiée lors de l'import de nouveaux "
+"média."
+
+#: ../../how-to-use-in-php-code.rst:2
+msgid "How to use in PHP code"
+msgstr "Comment utiliser dans du code PHP"
+
+#: ../../how-to-use-in-php-code.rst:4
+msgid "You can use this ingester in PHP code like this::"
+msgstr "Vous pouvez utiliser cet ingéreur dans le code PHP comme ceci::"
+
+#: ../../index.rst:21
+msgid "Table of contents"
+msgstr "Table des matières"
+
+#: ../../index.rst:2
+msgid "S3 Media Ingester documentation"
+msgstr "Documentation de S3 Media Ingester"
+
+#: ../../index.rst:4
+msgid ""
+"`S3 Media Ingester`_ adds a media ingester for files stored on S3 "
+"compatible object storages."
+msgstr ""
+"`S3 Media Ingester`_ ajoute un ingéreur pour les fichiers stockés sur "
+"des stockages objet compatible S3."
+
+#: ../../index.rst:10
+msgid "Installation"
+msgstr "Installation"
+
+#: ../../index.rst:12
+msgid ""
+"See general end user documentation for `Installing a module <http://"
+"omeka.org/s/docs/user-manual/modules/#installing-modules>`__."
+msgstr ""
+"Voir la documentation utilisateur pour `Installer un module <http://"
+"omeka.org/s/docs/user-manual/modules/#installing-modules>`__."
+
+#: ../../index.rst:17
+msgid "Compatibility with other modules"
+msgstr "Compatibilité avec d'autres modules"
+
+#: ../../index.rst:19
+msgid ""
+"S3 Media Ingester can be used as a media source for `CSVImport <https://"
+"github.com/omeka-s-modules/CSVImport>`_"
+msgstr ""
+"S3 Media Ingester peut être utilisé comme source de média pour "
+"`CSVImport <https://github.com/omeka-s-modules/CSVImport>`_"
