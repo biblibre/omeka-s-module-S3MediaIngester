@@ -26,7 +26,7 @@ class FileSelectorController extends AbstractActionController
             throw new NotFoundException;
         }
 
-        $prefix = $this->params()->fromQuery('prefix');
+        $prefix = $this->params()->fromQuery('prefix', '');
 
         $this->s3Client->setConfig($this->config['sources'][$source]);
         $response = $this->s3Client->listObjects($prefix);

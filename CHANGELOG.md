@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+- Fix deprecation error (strlen(): Passing null to parameter #1 ($string) of type string is deprecated)
+
 ## [0.1.1] - 2026-03-20
 
 - Fix error when filename contains special characters
